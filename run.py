@@ -108,7 +108,7 @@ if __name__ == "__main__":
     # framerate = args.framerate
     # output = args.output
     
-    model = load_model("groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
+    model = load_model("GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
         
     block = gr.Blocks().queue()
     with block:
@@ -138,4 +138,4 @@ if __name__ == "__main__":
         run_button.click(fn=app, inputs=[
                         input_video, grounding_caption, extraction_framerate, box_threshold, text_threshold], outputs=gallery)  
         
-    block.launch(server_name='0.0.0.0', server_port=7579)
+    block.launch(server_name='0.0.0.0', server_port=7579, share=True)
